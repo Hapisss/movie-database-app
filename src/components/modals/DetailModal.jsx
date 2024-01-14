@@ -14,7 +14,17 @@ const DetailModal = ({ isOpen, movie }) => {
                 <div className="fixed inset-0 flex items-center justify-center z-50">
                     <div className="fixed inset-0 bg-black opacity-50"></div>
                     <div className="bg-gray-200 rounded-lg z-[60] w-full sm:w-[768px] h-full sm:h-[500px] p-[24px] flex flex-col sm:flex-row gap-[24px] overflow-auto">
-                        <img src={movie.Poster} alt={movie.Title} className='bg-gray-500' width={300} height={450} />
+                        {
+                            movie.Poster ? (
+                                <div className="w-full sm:w-[300px] h-[400px]">
+                                    <img
+                                        src={movie.Poster}
+                                        alt={movie.Title}
+                                        className="object-cover w-full h-full"
+                                    />
+                                </div>
+                            ) : ''
+                        }
                         <div className="flex flex-col justify-between">
                             <h2 className="text-xl font-bold">{movie.Title}</h2>
                             <div className="h-full overflow-auto">
